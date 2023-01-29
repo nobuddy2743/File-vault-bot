@@ -51,8 +51,7 @@ Click Here 👇👇👇
 -<b> <a href=https://upier.vercel.app/pay/tgnvs@airtel>Donation Link</a></b>
 """
 	HOME_TEXT = """
-Hello, [{}](tg://user?id={})\n\n
-
+Hello, [{}](tg://user?id={})
 This is a Permanent FileStore Bot. 
 📢 Send Me any Media or File.I can Work In Channel too Add Me to Channel with Edit Permission.
 """
