@@ -328,6 +328,9 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [ 
                     [
+                        InlineKeyboardButton("💝 Donation Link 💝", url="https://upier.vercel.app/pay/tgnvs@airtel")
+                    ],
+                    [
                         InlineKeyboardButton("⭕ About ⭕", callback_data="aboutbot"),
                         InlineKeyboardButton("🔆 Home 🔆", callback_data="gotohome")
                     ]
