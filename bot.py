@@ -67,7 +67,7 @@ async def start(bot: Client, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
     if usr_cmd == "/start":
         await add_user_to_database(bot, cmd)
-        await cmd.reply_photo("https://graph.org/file/2af22b9d619409353804a.jpg",
+        await cmd.reply_photo("https://graph.org/file/1926aa8060489f5b2bd7a.jpg",
             caption=Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
             reply_markup=InlineKeyboardMarkup(
                 [
