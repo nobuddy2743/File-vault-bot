@@ -19,7 +19,7 @@ async def reply_forward(message: Message, file_id: int):
 				[
                     [InlineKeyboardButton("🎬 𝙼𝚘𝚟𝚒𝚎 Link Channal 🎬", url="https://t.me/+O0aUO3TbgR8xZjNl")]
                 ]
-			)
+			),
             quote=True)
     except FloodWait as e:
         await asyncio.sleep(e.value)
