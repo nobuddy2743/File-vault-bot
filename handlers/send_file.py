@@ -3,7 +3,7 @@
 import asyncio
 from configs import Config
 from pyrogram import Client
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
 from handlers.helpers import str_to_b64
 
@@ -11,10 +11,16 @@ from handlers.helpers import str_to_b64
 async def reply_forward(message: Message, file_id: int):
     try:
         await message.reply_text(
-            f"**Here is Sharable Link of this file:**\n"
-            f"https://telegram.dog/{Config.BOT_USERNAME}?start=tgnvs_{str_to_b64(str(file_id))}\n\n"
+            f"**Here is Sharable Link of this File:**\n"
+            f"<a href=https://telegram.dog/{Config.BOT_USERNAME}?start=tgnvs_{str_to_b64(str(file_id))}>DOWNLOAD LINK 🔗</a>\n\n"
             f"__To Retrive the Stored File, just open the link!__",
-            disable_web_page_preview=True, quote=True)
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+				[
+                    [InlineKeyboardButton("🎬 𝙼𝚘𝚟𝚒𝚎 Link Channal 🎬", url="https://t.me/+O0aUO3TbgR8xZjNl")]
+                ]
+			)
+            quote=True)
     except FloodWait as e:
         await asyncio.sleep(e.value)
         await reply_forward(message, file_id)
