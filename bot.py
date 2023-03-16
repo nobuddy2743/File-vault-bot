@@ -67,9 +67,8 @@ async def start(bot: Client, cmd: Message):
     usr_cmd = cmd.text.split("_", 1)[-1]
     if usr_cmd == "/start":
         await add_user_to_database(bot, cmd)
-        await cmd.reply_text(
-            Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
-            disable_web_page_preview=True,
+        await cmd.reply_photo("https://graph.org/file/2af22b9d619409353804a.jpg",
+            caption=Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -316,6 +315,9 @@ async def button(bot: Client, cmd: CallbackQuery):
                     ],
                     [
                         InlineKeyboardButton("🔆 Home 🔆", callback_data="gotohome")
+                    ],
+                    [
+                        InlineKeyboardButton("🚪 Close 🚪", callback_data="closeMessage")
                     ]
                 ]
             )
@@ -333,6 +335,9 @@ async def button(bot: Client, cmd: CallbackQuery):
                     [
                         InlineKeyboardButton("⭕ About ⭕", callback_data="aboutbot"),
                         InlineKeyboardButton("🔆 Home 🔆", callback_data="gotohome")
+                    ],
+                    [
+                        InlineKeyboardButton("🚪 Close 🚪", callback_data="closeMessage")
                     ]
                 ]
             )
@@ -349,7 +354,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                     ],
                     [
                         InlineKeyboardButton("⭕ About ⭕", callback_data="aboutbot"),
-                        InlineKeyboardButton("Close 🚪", callback_data="closeMessage")
+                        InlineKeyboardButton("🚪 Close 🚪", callback_data="closeMessage")
                     ]
                 ]
             )
@@ -372,14 +377,11 @@ async def button(bot: Client, cmd: CallbackQuery):
             except UserNotParticipant:
                 invite_link = await get_invite_link(channel_chat_id)
                 await cmd.message.edit(
-                    text="**Please Join Channal after Send File 😑**\n\n",
+                    text="<b>Please Join Channal after Send File 😑\n\n And reopen link OR retry Please </b>",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton("🤖 Join Channel", url=invite_link.invite_link)
-                            ],
-                            [
-                                InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
                             ]
                         ]
                     )
@@ -400,7 +402,8 @@ async def button(bot: Client, cmd: CallbackQuery):
                         InlineKeyboardButton("💝 Donation 💝", callback_data="aboutdevs")
                     ],
                     [
-                        InlineKeyboardButton("⭕ About ⭕", callback_data="aboutbot")
+                        InlineKeyboardButton("⭕ About ⭕", callback_data="aboutbot"),
+                        InlineKeyboardButton("🚪 Close 🚪", callback_data="closeMessage")
                     ]
                 ]
             )
