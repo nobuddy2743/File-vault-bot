@@ -7,7 +7,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
 from handlers.helpers import str_to_b64
 
-https://nvstgstorebot.blogspot.com/?fid=tgnvs_MTI4Mw%3D%3D&m=1
+
 async def reply_forward(message: Message, file_id: int):
     try:
         await message.reply_text(
