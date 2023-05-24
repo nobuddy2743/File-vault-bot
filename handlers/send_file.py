@@ -17,7 +17,7 @@ async def reply_forward(message: Message, file_id: int):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
 				[
-                    [InlineKeyboardButton("🎬 Download Link 🎬", url="https://animetgstorebot.blogspot.com/p/home.html?fid=tgnvs_{str_to_b64(str(file_id))}")]
+                    [InlineKeyboardButton("🎬 Download Link 🎬", url="https://t.me/tg_movielink")]
                 ]
 			),
             quote=True)
