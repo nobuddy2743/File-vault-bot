@@ -1,4 +1,4 @@
-Pyrogram==2.0.106
+Pyrogram==2.0.105
 TgCrypto
 motor
 aiofiles
@@ -6,3 +6,4 @@ dnspython
 psutil
 flask
 gunicorn
+render
