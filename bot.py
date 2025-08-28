@@ -51,7 +51,6 @@ Bot = Client(
 @Bot.on_message(filters.private)
 async def _(bot: Client, cmd: Message):
     await handle_user_status(bot, cmd)
-    await self.send_message(Config.LOG_CHANNEL, f"Bot Started")
 
 
 @Bot.on_message(filters.command("start") & filters.private)
