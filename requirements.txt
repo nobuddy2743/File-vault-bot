@@ -5,6 +5,7 @@ dnspython
 psutil
 flask
 gunicorn
+aiohttp
 render
 motor==3.4.0
 pymongo==4.8.0
