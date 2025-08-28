@@ -1,10 +1,10 @@
 Pyrogram
 TgCrypto
-motor
 aiofiles
 dnspython
 psutil
 flask
 gunicorn
 render
-pymongo[srv]==3.11
+motor==3.4.0
+pymongo==4.8.0
